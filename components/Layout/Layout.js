@@ -9,7 +9,7 @@ import classes from "./Layout.module.scss"
 
 const Layout = (props) => {
     const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false)
-    const [delayFooterLoading, setDelayFooterLoading] = useState(true)
+    const [delayFooter, setDelayFooter] = useState(false)
 
 
     const sideDrawerToggleHandler = () => {
@@ -20,12 +20,12 @@ const Layout = (props) => {
         setSideDrawerIsVisible(false)
     }
 
-    useEffect(() => {
-        setDelayFooterLoading(true)
-        setTimeout(() => {
-            setDelayFooterLoading(false)
-        }, 5000);
-    }, [])
+    // useEffect(() => {
+    //     setDelayFooter(true)
+    //     setTimeout(() => {
+    //         setDelayFooter(true)
+    //     }, 5000);
+    // }, [])
 
     const footer = (
         <div id="footer">
@@ -39,7 +39,8 @@ const Layout = (props) => {
         </div>
     )
 
-    const delayFooter = () => {
+    const delayFooterHandler = () => {
+        console.warn("delaying the rendering of ")
         setTimeout(() => {
             let delayedFooter = footer
             return delayedFooter
@@ -52,10 +53,12 @@ const Layout = (props) => {
             <Toolbar open={sideDrawerIsVisible} drawerToggler={sideDrawerToggleHandler} />
             <SideDrawer open={sideDrawerIsVisible} close={sideDrawerClosedHandler} />
             <main>{props.children}</main>
-            {props.isTrackingPage && delayFooterLoading ?
-                delayFooter()
-                :
-                footer
+            {props.isTrackingPage ?
+                delayFooter ?
+                    delayFooterHandler()
+                    :
+                    null
+                : null
             }
 
         </>

@@ -3,6 +3,5 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/": "pages/index.js",
-  "/tracking": "pages/tracking.js",
-  "/about": "pages/about.js"
+  "/tracking": "pages/tracking.js"
 }
