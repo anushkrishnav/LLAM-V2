@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps, router, navigation }) {
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         </Head>
-        {router.pathname === "/tracking"
+        {!router.pathname === "/tracking"
           ? (
             <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
               pageInitial: {
