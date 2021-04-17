@@ -14,7 +14,7 @@ const Tracker = () => {
         setPageLoading(true)
         setTimeout(() => {
             setPageLoading(false)
-        }, 5000);
+        }, 10000);
     }, [])
 
     const SEO = {
@@ -33,12 +33,14 @@ const Tracker = () => {
             {pageLoading ?
                 (
                     <div id="loading-overlay">
-                        <PageLoader />
-                        <h1 style={{ fontSize: "calc(8px + 0.8vw)", color: "#fff", textAlign: "center" }}>For best viewing experience use the desktop app.</h1>
+                        <div className="loader-content">
+                            <PageLoader />
+                            <h1 style={{ fontSize: "calc(8px + 0.8vw)", color: "#fff", textAlign: "center" }}>For best viewing experience use the desktop app.</h1>
+                        </div>
                     </div>
                 )
                 : null}
-            <Tracking />
+            {/* <Tracking /> */}
         </>
     )
 }

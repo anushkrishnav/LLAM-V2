@@ -95,7 +95,6 @@ a {
   position: absolute;
   left: 0px;
   right: 0px;
-  top: 0px;
   bottom: 0px;
   pointer-events: none;
   display: grid;
@@ -104,6 +103,10 @@ a {
   z-index: 9999;
   background-color: #000;
   opacity: 1;
+
+  .loader-content {
+    margin-bottom: 120px;
+  }
 }
 
 #toolbar {

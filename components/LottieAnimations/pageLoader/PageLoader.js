@@ -12,7 +12,7 @@ const PageLoader = () => {
     }
 
     return (
-        <div style={{ marginBottom: "80px" }}>
+        <div style={{ marginBottom: "50px" }}>
             <Lottie
                 options={defaultOptions}
                 height={"calc(100px + 6vw)"}
