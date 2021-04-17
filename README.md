@@ -1,4 +1,4 @@
-<img width="100%" src="https://github.com/Jappan07/LLAM/blob/master/public/Assets/Screenshot%20from%202021-04-06%2001-27-30.png" />
+
 <p align="center">
 <img width="300px" src="public/assetss/llamlogo.png" />
 </p>
