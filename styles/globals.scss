@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #a6a9b6 #eeeeee;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #eeeeee;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #a6a9b6;
+
+  border: 3px solid #eeeeee;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1.5px;
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+h1,
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  color: #111;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', sans-serif;
+  color: #111
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#nprogress .bar {
+  background: #b4edf3 !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #b4edf3 !important;
+  border-left-color: #b4edf3 !important;
+}
+
+@media screen and (max-width:800px) {
+  #nprogress .spinner-icon {
+    position: relative;
+    top: -12px;
+    right: -10px;
+  }
+}
+
+#cesium {
+  width: 100%;
+  height: 80%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+
+  @media screen and (max-width:1200px) {
+    height: 100vh;
+  }
+}
+
+.cesium-widget-credits {
+  display: none !important;
+}
+
+#loading-overlay {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  pointer-events: none;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 1) url("/assetss/loading.gif") no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+
+#toolbar {
+  color: #fff;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  // top: 0;
+  // left: 0;
+}
+
+#location-form {
+  text-align: left;
+  width: 18%;
+  padding: 1%;
+  background-color: #000;
+  color: #39FF14;
+  border-radius: 3px;
+  position: fixed;
+  top: 10vh;
+  left: 5px;
+
+  p {
+    font-size: calc(8px + 0.4vw);
+  }
+
+  @media screen and (max-width:768px) {
+    // top: 80px;
+    width: 30%;
+  }
+
+  @media screen and (max-width:481px) {
+    width: 40%;
+  }
+
+  h2 {
+    color: #39FF14;
+    font-size: calc(8px + 0.5vw);
+    margin-bottom: 5px;
+
+    @media screen and (max-width:481px) {
+      margin-bottom: 0px;
+    }
+  }
+
+  label {
+    font-size: calc(8px + 0.5vw);
+  }
+
+  input {
+    background-color: #000;
+    color: #39FF14;
+    padding: 0px 2px;
+    border-radius: 2px;
+    width: calc(20px + 8.5vw);
+    height: 20px;
+    border: 1px solid #39FF14;
+
+    @media screen and (max-width:481px) {
+      font-size: 8px;
+    }
+  }
+
+  button {
+    color: #000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 2% 4%;
+    border: 1px solid #000;
+    border-radius: 1px;
+    font-size: calc(8px + 0.4vw);
+    background-color: #39FF14;
+    ;
+
+    &:hover {
+      background-color: #2bc710;
+      ;
+    }
+  }
+}
+
+
+// custom 404 page css
+.errorPage {
+  text-align: center;
+  height: 100vh;
+
+  a {
+    color: #888;
+
+    &:hover {
+      color: rgb(95, 95, 95);
+    }
+  }
+}
+
+#errorPageContainer {
+  margin: 300px auto 0;
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+
+.fof {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.fof h1 {
+  font-size: 50px;
+  display: inline-block;
+  padding-right: 12px;
+  animation: type .5s alternate infinite;
+}
+
+@keyframes type {
+  from {
+    box-shadow: inset -3px 0px 0px #888;
+  }
+
+  to {
+    box-shadow: inset -3px 0px 0px transparent;
+  }
+}

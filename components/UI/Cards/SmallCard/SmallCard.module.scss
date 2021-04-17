@@ -1,0 +1,99 @@
+.Card {
+    text-align: left;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 650px;
+    margin-bottom: 30px;
+    padding: 40px 30px;
+    border-radius: 8px;
+    color: #000;
+    border: 1px solid #000;
+    transition: 0.3s ease all;
+
+    .CardImage {
+        transform: scale(1);
+    }
+
+    .CardImageContainer {
+        transition: 0.3s ease all;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+        .CardImageContainer {
+            transform: scale(1);
+        }
+
+        .CardContent {
+            transform: scale(1);
+        }
+
+    }
+
+    .CardContent {
+        margin-left: 20px;
+        transition: 0.3s ease all;
+
+        h3 {
+            color: #000;
+            font-family: 'Open Sans', serif;
+            font-size: 1.3rem;
+            font-size: calc(14px + 0.8vw);
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            font-size: calc(12px + 0.6vw);
+        }
+
+    }
+
+    @media screen and (max-width:1000px) {
+        padding: 30px 20px;
+        width: 80%;
+        height: 450px;
+        margin-top: 0px;
+        flex-direction: column;
+
+        .CardContent {
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                margin-top: 10px;
+                font-size: 1rem;
+            }
+
+        }
+    }
+
+    @media screen and(max-width:481px) {
+
+        padding: 30px 20px;
+        width: 70%;
+        height: 350px;
+
+        .CardContent {
+            margin-top: 5px;
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            p {
+                margin-top: 8px;
+                font-size: 0.8rem;
+            }
+        }
+
+
+    }
+
+}

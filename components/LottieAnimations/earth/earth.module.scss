@@ -1,0 +1,11 @@
+.Lottie {
+    @media screen and (min-width:1000px) {
+        width: 40%;
+    }
+
+    @media screen and (max-width:481px) {
+        width: 350px;
+    }
+
+    width: 500px;
+}
