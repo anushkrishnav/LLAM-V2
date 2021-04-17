@@ -15,8 +15,8 @@ const PageLoader = () => {
         <div>
             <Lottie
                 options={defaultOptions}
-                height={200}
-                width={200}
+                height={"10vw"}
+                width={"10vw"}
             />
         </div>
     );
