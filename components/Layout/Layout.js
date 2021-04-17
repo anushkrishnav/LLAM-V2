@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import Toolbar from "../Toolbar/Toolbar"
@@ -9,6 +9,8 @@ import classes from "./Layout.module.scss"
 
 const Layout = (props) => {
     const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false)
+    const [delayFooterLoading, setDelayFooterLoading] = useState(false)
+
 
     const sideDrawerToggleHandler = () => {
         setSideDrawerIsVisible(!sideDrawerIsVisible)
@@ -18,20 +20,44 @@ const Layout = (props) => {
         setSideDrawerIsVisible(false)
     }
 
+    useEffect(() => {
+        setDelayFooterLoading(true)
+        setTimeout(() => {
+            setDelayFooterLoading(false)
+        }, 5000);
+    }, [])
+
+    const footer = (
+        <div id="footer">
+            <div className={classes.Footer}>
+                <span className={classes.HHLogo}><img src={"/assetss/HackerHouse.png"} alt="Hacker House logo" /></span>
+                <a href="https://github.com/Jappan07/LLAM" target="_blank"><GitHubIcon style={{ fontSize: "1rem", color: "lightgray", marginTop: "8px" }} /></a>
+                <Link href="/about"><a style={{ fontSize: ".6rem", color: "lightgray", textDecoration: "none", marginBottom: "8px" }}>About us</a></Link>
+                <h1 style={{ marginBottom: "10px" }}>Created with <FavoriteIcon style={{ fontSize: "18px", position: "relative", top: "5px" }} className={classes.Heart} /> by team HACKER HOUSE</h1>
+                <p>Copyright © 2021-3010</p>
+            </div>
+        </div>
+    )
+
+    const delayFooter = () => {
+        setTimeout(() => {
+            delayedFooter = footer
+            return delayedFooter
+        }, 5000);
+    }
+
     return (
+
         <>
             <Toolbar open={sideDrawerIsVisible} drawerToggler={sideDrawerToggleHandler} />
             <SideDrawer open={sideDrawerIsVisible} close={sideDrawerClosedHandler} />
             <main>{props.children}</main>
-            <div id="footer">
-                <div className={classes.Footer}>
-                    <span className={classes.HHLogo}><img src={"/assetss/HackerHouse.png"} alt="Hacker House logo" /></span>
-                    <a href="https://github.com/Jappan07/LLAM" target="_blank"><GitHubIcon style={{ fontSize: "1rem", color: "lightgray", marginTop: "8px" }} /></a>
-                    <Link href="/about"><a style={{ fontSize: ".6rem", color: "lightgray", textDecoration: "none", marginBottom: "8px" }}>About us</a></Link>
-                    <h1 style={{ marginBottom: "10px" }}>Created with <FavoriteIcon style={{ fontSize: "18px", position: "relative", top: "5px" }} className={classes.Heart} /> by team HACKER HOUSE</h1>
-                    <p>Copyright © 2021-3010</p>
-                </div>
-            </div>
+            {props.isTrackingPage && delayFooterLoading ?
+                delayFooter()
+                :
+                footer
+            }
+
         </>
     )
 }
