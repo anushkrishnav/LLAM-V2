@@ -24,16 +24,21 @@ function MyApp({ Component, pageProps, router, navigation }) {
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         </Head>
-        <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
-          pageInitial: {
-            opacity: 0
-          },
-          pageAnimate: {
-            opacity: 1
-          }
-        }}>
-          <Component {...pageProps} />
-        </motion.div>
+        {router.pathname === "/tracking"
+          ? (
+            <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
+              pageInitial: {
+                opacity: 0
+              },
+              pageAnimate: {
+                opacity: 1
+              }
+            }}>
+              <Component {...pageProps} />
+            </motion.div>
+          )
+          : <Component {...pageProps} />}
+
       </Layout>
     </>
   )
