@@ -14,7 +14,7 @@ const Tracker = () => {
         setPageLoading(true)
         setTimeout(() => {
             setPageLoading(false)
-        }, 10000);
+        }, 5000);
     }, [])
 
     const SEO = {
@@ -40,7 +40,7 @@ const Tracker = () => {
                     </div>
                 )
                 : null}
-            {/* <Tracking /> */}
+            <Tracking />
         </>
     )
 }
