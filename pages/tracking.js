@@ -30,15 +30,15 @@ const Tracker = () => {
     return (
         <>
             <NextSeo {...SEO} />
-            {pageLoading ? (
-                <div id="loading-overlay">
-                    <PageLoader />
-                    <br />
-                    <h1 style={{ fontSize: "calc(12px + 0.8vw)", color: "#fff", textAlign: "center" }}>For best viewing experience use the desktop app.</h1>
-                </div>
-            )
-                :
-                null}
+            {pageLoading ?
+                (
+                    <div id="loading-overlay">
+                        <PageLoader />
+                        <br />
+                        <h1 style={{ fontSize: "calc(12px + 0.8vw)", color: "#fff", textAlign: "center" }}>For best viewing experience use the desktop app.</h1>
+                    </div>
+                )
+                : null}
             <Tracking />
         </>
     )
