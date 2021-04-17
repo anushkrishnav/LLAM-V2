@@ -7,14 +7,9 @@ import { faSearchLocation } from '@fortawesome/free-solid-svg-icons'
 import { motion } from "framer-motion"
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SmallCard from "../components/UI/Cards/SmallCard/SmallCard"
-import LottieEarth from "../components/LottieAnimations/earth/earth"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { NextSeo } from "next-seo"
-
-export const config = {
-    unstable_runtimeJS: false
-}
 
 const HomePage = () => {
     const SEO = {
