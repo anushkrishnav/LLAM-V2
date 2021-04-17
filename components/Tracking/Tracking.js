@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import axios from "axios"
+import Footer from "../../components/UI/Footer/Footer"
 import * as Cesium from 'cesium';
 import CesiumWind from "./Wind";
 
@@ -251,6 +252,7 @@ const Tracking = () => {
         {loading ? <p>Loading...</p> : null}
         {predictedData ? <p>{displayMessage} {predictedData.risk.toFixed(2)}%</p> : null}
       </form>
+      <Footer />
     </>
   );
 }

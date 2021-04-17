@@ -36,10 +36,9 @@ const Layout = (props) => {
             <Toolbar open={sideDrawerIsVisible} drawerToggler={sideDrawerToggleHandler} />
             <SideDrawer open={sideDrawerIsVisible} close={sideDrawerClosedHandler} />
             <main>{props.children}</main>
-            {/* {
-                props.isTrackingPage ? <Footer delay={5000} /> : <Footer delay={0} />
-            } */}
-            <Footer trackingPage={props.isTrackingPage} />
+            {
+                props.isTrackingPage ? null : <Footer />
+            }
         </>
     )
 }
