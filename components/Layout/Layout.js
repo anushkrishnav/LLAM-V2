@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
 import Toolbar from "../Toolbar/Toolbar"
+import Footer from "../UI/Footer/Footer"
 import SideDrawer from "../SideDrawer/SideDrawer"
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import classes from "./Layout.module.scss"
 
 const Layout = (props) => {
     const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false)
-    const [delayFooter, setDelayFooter] = useState(false)
+    // const [delayFooter, setDelayFooter] = useState(false)
 
 
     const sideDrawerToggleHandler = () => {
@@ -21,46 +17,29 @@ const Layout = (props) => {
     }
 
     // useEffect(() => {
-    //     setDelayFooter(true)
-    //     setTimeout(() => {
+    //     if (props.isTrackingPage) {
     //         setDelayFooter(true)
+    //     }
+    // }, [delayFooter])
+
+
+    // const delayFooterHandler = () => {
+    //     setTimeout(() => {
+    //         let delayedFooter = footer
+    //         return delayedFooter
     //     }, 5000);
-    // }, [])
-
-    const footer = (
-        <div id="footer">
-            <div className={classes.Footer}>
-                <span className={classes.HHLogo}><img src={"/assetss/HackerHouse.png"} alt="Hacker House logo" /></span>
-                <a href="https://github.com/Jappan07/LLAM" target="_blank"><GitHubIcon style={{ fontSize: "1rem", color: "lightgray", marginTop: "8px" }} /></a>
-                <Link href="/about"><a style={{ fontSize: ".6rem", color: "lightgray", textDecoration: "none", marginBottom: "8px" }}>About us</a></Link>
-                <h1 style={{ marginBottom: "10px" }}>Created with <FavoriteIcon style={{ fontSize: "18px", position: "relative", top: "5px" }} className={classes.Heart} /> by team HACKER HOUSE</h1>
-                <p>Copyright © 2021-3010</p>
-            </div>
-        </div>
-    )
-
-    const delayFooterHandler = () => {
-        console.warn("delaying the rendering of ")
-        setTimeout(() => {
-            let delayedFooter = footer
-            return delayedFooter
-        }, 5000);
-    }
+    //     return null
+    // }
 
     return (
-
         <>
             <Toolbar open={sideDrawerIsVisible} drawerToggler={sideDrawerToggleHandler} />
             <SideDrawer open={sideDrawerIsVisible} close={sideDrawerClosedHandler} />
             <main>{props.children}</main>
-            {props.isTrackingPage ?
-                delayFooter ?
-                    delayFooterHandler()
-                    :
-                    null
-                : null
-            }
-
+            {/* {
+                props.isTrackingPage ? <Footer delay={5000} /> : <Footer delay={0} />
+            } */}
+            <Footer trackingPage={props.isTrackingPage} />
         </>
     )
 }

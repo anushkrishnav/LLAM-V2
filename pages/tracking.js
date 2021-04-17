@@ -40,7 +40,8 @@ const Tracker = () => {
                     </div>
                 )
                 : null}
-            <Tracking />
+            {/* <Tracking /> */}
+            <div>Tracking feature</div>
         </>
     )
 }
