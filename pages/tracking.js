@@ -34,7 +34,6 @@ const Tracker = () => {
                 (
                     <div id="loading-overlay">
                         <PageLoader />
-                        <br />
                         <h1 style={{ fontSize: "calc(8px + 0.8vw)", color: "#fff", textAlign: "center" }}>For best viewing experience use the desktop app.</h1>
                     </div>
                 )
