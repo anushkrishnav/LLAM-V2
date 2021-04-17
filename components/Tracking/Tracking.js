@@ -224,7 +224,6 @@ const Tracking = () => {
     }
     else {
       let data = `lat-${lat}-long-${long}`
-      // setLoading(true)
       axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
         .then(response => {
           setDisplayButtonMessage("Done ✔️")

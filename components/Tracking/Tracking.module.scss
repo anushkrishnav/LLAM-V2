@@ -8,7 +8,6 @@
     justify-content: space-evenly;
 
     .Content {
-        // width: 45%;
 
         h1 {
             font-size: calc(16px + 1.2vw);
@@ -23,21 +22,19 @@
             border-radius: 8px;
 
             .FormEntity {
-                // padding: 0 40% 0 0;
                 margin-bottom: 15px;
                 display: flex;
-                // justify-content: space-between;
                 align-items: center;
 
                 label {
                     margin-right: 5%;
-                    font-size: calc(16px + 0.4vw);
+                    font-size: calc(12px + 0.6vw);
                 }
 
                 input {
                     color: #fff;
                     border: none;
-                    font-size: calc(12px + 0.2vw);
+                    font-size: calc(10px + 0.2vw);
                     background: #000;
                     border-bottom: 1px solid #fff;
                     margin-left: 5px;
@@ -54,10 +51,9 @@
                 align-items: center;
 
                 button {
-                    font-size: 16px;
+                    font-size: 14px;
                     width: 45%;
-                    height: 50px;
-                    padding: 5px 12px;
+                    padding: 2% 2%;
                 }
             }
 
@@ -73,7 +69,7 @@
     }
 
     .GuageContainer {
-        width: calc(200px + 25%);
+        width: calc(300px + 25%);
     }
 
     @media screen and (max-width:1200px) {
