@@ -8,7 +8,7 @@ Project: L.L.A.M - Locust Location & Apprehension Module
 
 > "Save crops from locust attacks"
 
-**Web App**: https://locustlocator.vercel.app 🔗
+**Web App**: https://locustlocator2.vercel.app 🔗
 
 **Live Demo**: https://youtu.be/C1QmCuzrBw8 🔗
 ## What does this project do? 🤔

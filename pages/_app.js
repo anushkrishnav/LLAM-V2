@@ -15,6 +15,7 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps, router, navigation }) {
+  console.log(router.pathname)
 
   return (
     <>
@@ -24,16 +25,21 @@ function MyApp({ Component, pageProps, router, navigation }) {
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         </Head>
-        <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
-          pageInitial: {
-            opacity: 0
-          },
-          pageAnimate: {
-            opacity: 1
-          }
-        }}>
-          <Component {...pageProps} />
-        </motion.div>
+        {router.pathname === "/tracking" ? <Component {...pageProps} />
+          :
+          (
+            <motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
+              pageInitial: {
+                opacity: 0
+              },
+              pageAnimate: {
+                opacity: 1
+              }
+            }}>
+              <Component {...pageProps} />
+            </motion.div>
+          )
+        }
       </Layout>
     </>
   )
