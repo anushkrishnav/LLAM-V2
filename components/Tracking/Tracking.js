@@ -51,7 +51,7 @@ const Tracking = () => {
 
     var indiaPosition = Cesium.Rectangle.fromDegrees(west, south, east, north);
 
-    Cesium.Camera.DEFAULT_VIEW_FACTOR = 1.2;
+    Cesium.Camera.DEFAULT_VIEW_FACTOR = 2;
     Cesium.Camera.DEFAULT_VIEW_RECTANGLE = indiaPosition;
 
     var imagery = Cesium.createDefaultImageryProviderViewModels();
@@ -66,6 +66,10 @@ const Tracking = () => {
       timeline: false,
       // automaticallyTrackDataSourceClocks: false
     });
+    // removing the stars
+    // var scene = viewer.scene;
+    // scene.skyBox.destroy();
+    // scene.skyBox = undefined;
 
     // viewer.imageryLayers.addImageryProvider(provider);
     // enabling lighting effects due to sun

@@ -12,6 +12,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { NextSeo } from "next-seo"
 
+export const config = {
+    unstable_runtimeJS: false
+}
+
 const HomePage = () => {
     const SEO = {
         title: "Locust Location & Apprehension Module",
