@@ -9,7 +9,7 @@ import classes from "./Layout.module.scss"
 
 const Layout = (props) => {
     const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false)
-    const [delayFooterLoading, setDelayFooterLoading] = useState(false)
+    const [delayFooterLoading, setDelayFooterLoading] = useState(true)
 
 
     const sideDrawerToggleHandler = () => {
@@ -41,7 +41,7 @@ const Layout = (props) => {
 
     const delayFooter = () => {
         setTimeout(() => {
-            delayedFooter = footer
+            let delayedFooter = footer
             return delayedFooter
         }, 5000);
     }
