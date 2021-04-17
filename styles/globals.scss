@@ -57,6 +57,13 @@ a {
   text-decoration: none;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 #nprogress .bar {
   background: #b4edf3 !important;
 }
@@ -119,75 +126,75 @@ a {
   // left: 0;
 }
 
-#location-form {
-  text-align: left;
-  width: 18%;
-  padding: 1%;
-  background-color: #000;
-  color: #39FF14;
-  border-radius: 3px;
-  position: fixed;
-  top: 10vh;
-  left: 5px;
+// #location-form {
+  //   text-align: left;
+  //   width: 18%;
+  //   padding: 1%;
+  //   background-color: #000;
+  //   color: #39FF14;
+  //   border-radius: 3px;
+  //   position: fixed;
+  //   top: 10vh;
+  //   left: 5px;
 
-  p {
-    font-size: calc(8px + 0.4vw);
-  }
+  //   p {
+  //     font-size: calc(8px + 0.4vw);
+  //   }
 
-  @media screen and (max-width:768px) {
-    // top: 80px;
-    width: 30%;
-  }
+  //   @media screen and (max-width:768px) {
+  //     // top: 80px;
+  //     width: 30%;
+  //   }
 
-  @media screen and (max-width:481px) {
-    width: 40%;
-  }
+  //   @media screen and (max-width:481px) {
+  //     width: 40%;
+  //   }
 
-  h2 {
-    color: #39FF14;
-    font-size: calc(8px + 0.5vw);
-    margin-bottom: 5px;
+  //   h2 {
+  //     color: #39FF14;
+  //     font-size: calc(8px + 0.5vw);
+  //     margin-bottom: 5px;
 
-    @media screen and (max-width:481px) {
-      margin-bottom: 0px;
-    }
-  }
+  //     @media screen and (max-width:481px) {
+  //       margin-bottom: 0px;
+  //     }
+  //   }
 
-  label {
-    font-size: calc(8px + 0.5vw);
-  }
+  //   label {
+  //     font-size: calc(8px + 0.5vw);
+  //   }
 
-  input {
-    background-color: #000;
-    color: #39FF14;
-    padding: 0px 2px;
-    border-radius: 2px;
-    width: calc(20px + 8.5vw);
-    height: 20px;
-    border: 1px solid #39FF14;
+  //   input {
+  //     background-color: #000;
+  //     color: #39FF14;
+  //     padding: 0px 2px;
+  //     border-radius: 2px;
+  //     width: calc(20px + 8.5vw);
+  //     height: 20px;
+  //     border: 1px solid #39FF14;
 
-    @media screen and (max-width:481px) {
-      font-size: 8px;
-    }
-  }
+  //     @media screen and (max-width:481px) {
+  //       font-size: 8px;
+  //     }
+  //   }
 
-  button {
-    color: #000;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 2% 4%;
-    border: 1px solid #000;
-    border-radius: 1px;
-    font-size: calc(8px + 0.4vw);
-    background-color: #39FF14;
-    ;
+  //   button {
+  //     color: #000;
+  //     margin-top: 5px;
+  //     margin-bottom: 5px;
+  //     padding: 2% 4%;
+  //     border: 1px solid #000;
+  //     border-radius: 1px;
+  //     font-size: calc(8px + 0.4vw);
+  //     background-color: #39FF14;
+  //     ;
 
-    &:hover {
-      background-color: #2bc710;
-      ;
-    }
-  }
-}
+  //     &:hover {
+  //       background-color: #2bc710;
+  //       ;
+  //     }
+  //   }
+  // }
 
 
 // custom 404 page css

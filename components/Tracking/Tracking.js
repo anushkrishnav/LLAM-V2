@@ -3,6 +3,8 @@ import axios from "axios"
 import Footer from "../../components/UI/Footer/Footer"
 import * as Cesium from 'cesium';
 import CesiumWind from "./Wind";
+import GaugeChart from 'react-gauge-chart'
+import classes from "./Tracking.module.scss"
 
 // fetching locust locations
 const fetchData = async () => {
@@ -35,12 +37,11 @@ const usePrevious = (value) => {
 
 
 const Tracking = () => {
-
+  const [longitude, setLongitude] = useState(0)
+  const [latitude, setLatitude] = useState(0)
   const [predictedData, setPredictedData] = useState(null)
+  const [displayButtonMessage, setDisplayButtonMessage] = useState("Predict")
   const [displayMessage, setDisplayMessage] = useState("")
-  const [longitude, setLongitude] = useState("")
-  const [latitude, setLatitude] = useState("")
-  const [loading, setLoading] = useState(false)
 
   const init = (locationData) => {
     // default view over India
@@ -206,36 +207,45 @@ const Tracking = () => {
 
   const onFormSubmitHandler = (event) => {
     event.preventDefault();
+    setDisplayButtonMessage("Predicting...")
     console.log("Longitude: " + longitude)
     console.log("Latitude: " + latitude)
     let lat = latitude
     let long = longitude
 
-    if (lat === "" && long === "") {
-      setPredictedData({ risk: NaN })
+    if (lat < 0 || long < 0) {
+      setDisplayButtonMessage("Predict")
+      setDisplayMessage("Invalid input")
+      setPredictedData(0)
     }
     else if (prevLat === lat && prevLong === long) {
+      setDisplayButtonMessage("Predict")
       console.log("lat and long matched with prev values")
     }
     else {
       let data = `lat-${lat}-long-${long}`
-      setLoading(true)
+      // setLoading(true)
       axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
         .then(response => {
-          setLoading(false)
-          setDisplayMessage("Predicted Probability = ")
-          setPredictedData(response.data)
+          setDisplayButtonMessage("Done ✔️")
+          setDisplayMessage("Probability = " + response.data.risk.toFixed(2) + "%")
           // plotPredictedPoint(longitude, latitude)
+          setPredictedData(response.data.risk / 100)
+          console.log(response.data.risk / 100)
+        })
+        .catch(error => {
+          console.log(error)
         })
     }
   }
 
+
   const onResetHandler = (event) => {
     event.preventDefault();
     setDisplayMessage("")
-    setLongitude("")
-    setLatitude("")
-    setLoading(false)
+    setDisplayButtonMessage("Predict")
+    setLongitude(0)
+    setLatitude(0)
     setPredictedData(null)
   }
 
@@ -243,19 +253,35 @@ const Tracking = () => {
     <>
       <div id="cesium" />
       <div id="toolbar" />
-      <form id="location-form">
-        <h2>Predicting Probability of Attack</h2>
-        <label htmlFor="longitude">longitude: </label>
-        <input type="text" name="long" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
-        <br />
-        <label htmlFor="latitude">latitude: </label>
-        <input type="text" name="lat" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
-        <br />
-        <button onClick={onFormSubmitHandler}>Predict</button>
-        <button onClick={onResetHandler}>Reset</button>
-        {loading ? <p>Loading...</p> : null}
-        {predictedData ? <p>{displayMessage} {predictedData.risk.toFixed(2)}%</p> : null}
-      </form>
+      <div className={classes.MetricsContainer}>
+        <div className={classes.Content}>
+          <h1>Predict Probability of Locust Attack</h1>
+          <div className={classes.Form}>
+            <div className={classes.FormEntity}>
+              <label htmlFor="longitude">longitude: </label>
+              <input type="text" name="long" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
+            </div>
+            <div className={classes.FormEntity}>
+              <label htmlFor="latitude">latitude: </label>
+              <input type="text" name="lat" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
+            </div>
+            <div className={classes.ButtonsContainer}>
+              <button onClick={onFormSubmitHandler}>{displayButtonMessage}</button>
+              <button onClick={onResetHandler}>Reset</button>
+            </div>
+            <div className={classes.DisplayMessage}>{displayMessage}</div>
+          </div>
+        </div>
+        <div className={classes.GuageContainer}>
+          <GaugeChart id="gauge-chart2"
+            nrOfLevels={420}
+            arcsLength={[0.2, 0.5, 0.2]}
+            colors={['#5BE12C', '#F5CD19', '#EA4228']}
+            percent={predictedData}
+            arcPadding={0.02}
+          />
+        </div>
+      </div>
       <Footer />
     </>
   );
