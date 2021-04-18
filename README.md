@@ -1,6 +1,6 @@
 <img width="100%" src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/challenge_photos/001/481/713/datas/full_width.png" />
 
-<img width="300px" src="https://res.cloudinary.com/devpost/image/fetch/s--vfRegv2i--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://github.com/Jappan07/LLAM/raw/master/public/assetss/llamLogo.png" />
+<img width="300px" src="https://github.com/Jappan07/LLAM/blob/master/public/Assets/LLAM-Logo.png" />
 </p> <br>
 
 L.L.A.M - Locust Location & Apprehension Module[ Version 2]
