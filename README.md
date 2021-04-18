@@ -1,6 +1,6 @@
 <img width="100%" src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/challenge_photos/001/481/713/datas/full_width.png" />
 
-<img width="100px" src="https://github.com/Jappan07/LLAM/raw/master/public/assetss/llamLogo.png" />
+<img width="100px" src="https://res.cloudinary.com/devpost/image/fetch/s--vfRegv2i--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://github.com/Jappan07/LLAM/raw/master/public/assetss/llamLogo.png" />
 </p> <br>
 
 L.L.A.M - Locust Location & Apprehension Module[ Version 2]
@@ -60,12 +60,19 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 
 
 <h4 align="center">Tracking feature</h4>
+
 ![](https://raw.githubusercontent.com/Hackers-House/LLAM-Graphics/main/a.png)
+
 <h4 align="center">Wind patterns and locusts visualized</h4>
+
 ![](https://raw.githubusercontent.com/Hackers-House/LLAM-Graphics/main/b.png)
+
 <h4 align="center">Zoomed in view of location where potential locust is found</h4>
+
 ![](https://raw.githubusercontent.com/Hackers-House/LLAM-Graphics/main/c.png)
+
 <h4 align="center">Predicting locust attack on a particular location</h4>
+
 ![](https://raw.githubusercontent.com/Hackers-House/LLAM-Graphics/main/d.png)
 
 <h4 align="center"><a target="_blank" href="https://drive.google.com/file/d/1g6OHy5ZD4szA-MYwIqhsx4ThTgVz9s6F/view?usp=sharing">ML pipeline 🔗</a></h4>
