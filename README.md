@@ -1,7 +1,7 @@
 <img width="100%" src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/challenge_photos/001/481/713/datas/full_width.png" />
 
 <p align="center"><img width="350px" src="public/assetss/llamlogo.png" />
-</p> <br>
+</p>
 
 L.L.A.M - Locust Location & Apprehension Module[ Version 2]
 =======================
