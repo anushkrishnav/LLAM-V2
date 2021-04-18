@@ -215,9 +215,9 @@ const Tracking = () => {
     let lat = latitude
     let long = longitude
 
-    if (lat < 0 || long < 0) {
+    if (lat < -90 || long < -180 || lat > 90 || long > 180) {
       setDisplayButtonMessage("Predict")
-      setDisplayMessage("Invalid input")
+      setDisplayMessage("Invalid input! Enter coordinates in range.")
       setPredictedData(0)
     }
     else if (prevLat === lat && prevLong === long) {
