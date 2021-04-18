@@ -4,6 +4,7 @@ import Footer from "../../components/UI/Footer/Footer"
 import * as Cesium from 'cesium';
 import CesiumWind from "./Wind";
 import GaugeChart from 'react-gauge-chart'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from "../../components/UI/Button/Button"
 import classes from "./Tracking.module.scss"
 
@@ -239,7 +240,6 @@ const Tracking = () => {
     }
   }
 
-
   const onResetHandler = (event) => {
     event.preventDefault();
     setDisplayMessage(null)
@@ -249,11 +249,20 @@ const Tracking = () => {
     setPredictedData(null)
   }
 
+  const scrollToPredict = () => {
+    const element = document.getElementById("prediction-meter")
+    const yOffset = 0;
+    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
   return (
     <>
-      <div id="cesium" />
+      <div id="cesium">
+        {/* <a onClick={scrollToPredict} id="scrollToPredictor">Locust Predictor <ExpandMoreIcon className={classes.Icon} fontSize="small" /></a> */}
+      </div>
       <div id="toolbar" />
-      <div className={classes.MetricsContainer}>
+      <div id="prediction-meter" className={classes.MetricsContainer}>
         <div className={classes.Content}>
           <h1>Predict Probability of Locust Attack</h1>
           <div className={classes.Form}>

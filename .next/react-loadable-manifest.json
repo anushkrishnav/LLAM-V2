@@ -313,6 +313,10 @@
       "file": "static/chunks/1.js"
     },
     {
+      "id": "./node_modules/@material-ui/icons/ExpandMore.js",
+      "file": "static/chunks/1.js"
+    },
+    {
       "id": "./node_modules/@material-ui/icons/Favorite.js",
       "file": "static/chunks/1.js"
     },
