@@ -4,6 +4,7 @@ import Footer from "../../components/UI/Footer/Footer"
 import * as Cesium from 'cesium';
 import CesiumWind from "./Wind";
 import GaugeChart from 'react-gauge-chart'
+import Button from "../../components/UI/Button/Button"
 import classes from "./Tracking.module.scss"
 
 // fetching locust locations
@@ -41,7 +42,7 @@ const Tracking = () => {
   const [latitude, setLatitude] = useState(0)
   const [predictedData, setPredictedData] = useState(null)
   const [displayButtonMessage, setDisplayButtonMessage] = useState("Predict")
-  const [displayMessage, setDisplayMessage] = useState("")
+  const [displayMessage, setDisplayMessage] = useState(null)
 
   const init = (locationData) => {
     // default view over India
@@ -198,7 +199,7 @@ const Tracking = () => {
   useEffect(async () => {
     const locationData = await fetchData()
     // const prediction = await predictedData
-    init(locationData);
+    // init(locationData);
   }, [])
 
   const prevLat = usePrevious(latitude);
@@ -226,7 +227,7 @@ const Tracking = () => {
       let data = `lat-${lat}-long-${long}`
       axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
         .then(response => {
-          setDisplayButtonMessage("Done ✔️")
+          setDisplayButtonMessage("Predict Again")
           setDisplayMessage("Probability = " + response.data.risk.toFixed(2) + "%")
           // plotPredictedPoint(longitude, latitude)
           setPredictedData(response.data.risk / 100)
@@ -241,7 +242,7 @@ const Tracking = () => {
 
   const onResetHandler = (event) => {
     event.preventDefault();
-    setDisplayMessage("")
+    setDisplayMessage(null)
     setDisplayButtonMessage("Predict")
     setLongitude(0)
     setLatitude(0)
@@ -250,8 +251,8 @@ const Tracking = () => {
 
   return (
     <>
-      <div id="cesium" />
-      <div id="toolbar" />
+      {/* <div id="cesium" /> */}
+      {/* <div id="toolbar" /> */}
       <div className={classes.MetricsContainer}>
         <div className={classes.Content}>
           <h1>Predict Probability of Locust Attack</h1>
@@ -265,10 +266,10 @@ const Tracking = () => {
               <input type="text" name="lat" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
             </div>
             <div className={classes.ButtonsContainer}>
-              <button onClick={onFormSubmitHandler}>{displayButtonMessage}</button>
-              <button onClick={onResetHandler}>Reset</button>
+              <Button clicked={onFormSubmitHandler}>{displayButtonMessage}</Button>
+              <Button clicked={onResetHandler}>Reset</Button>
             </div>
-            <div className={classes.DisplayMessage}>{displayMessage}</div>
+            {displayMessage ? <div className={classes.DisplayMessage}>{displayMessage}</div> : null}
           </div>
         </div>
         <div className={classes.GuageContainer}>

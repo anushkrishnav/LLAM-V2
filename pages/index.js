@@ -78,7 +78,7 @@ const HomePage = () => {
                             </div>
                         </h1>
                         <motion.div initial="hidden" animate="visible" variants={variants}>
-                            <Button className={classes.Button} clicked={() => router.push("/tracking")}>Track Locusts <FontAwesomeIcon icon={faSearchLocation} /></Button>
+                            <Button className={classes.Button} clicked={() => router.push("/tracking")}>Track Locusts</Button>
                         </motion.div>
                         <span onClick={handleClick} className={classes.scrollDown}><ExpandMoreIcon className={classes.Icon} fontSize="small" /></span>
                     </div>

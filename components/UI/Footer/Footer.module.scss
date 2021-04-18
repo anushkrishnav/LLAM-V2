@@ -9,29 +9,6 @@
     align-items: center;
     flex-direction: column;
 
-    &.AnimationDelay {
-        animation: fadeIn 5s;
-        -webkit-animation: fadeIn 5s;
-        -moz-animation: fadeIn 5s;
-        -o-animation: fadeIn 5s;
-        -ms-animation: fadeIn 5s;
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 0
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-    }
-
-
     h1 {
         color: rgb(228, 227, 227);
         font-family: 'Open Sans', 'Lato', sans-serif;
@@ -48,15 +25,16 @@
         font-size: 0.5rem;
     }
 
-    .Heart {
-        font-size: 13px;
-        padding: 2px;
-        color: rgb(219, 115, 112);
-        animation: beat .5s infinite alternate;
-    }
-
     .HHLogo img {
         border-radius: 50%;
+    }
+
+    .Heart {
+        position: relative;
+        font-size: 13px;
+        padding: 1px;
+        color: rgb(219, 115, 112);
+        animation: beat .5s infinite alternate;
     }
 
     @keyframes beat {
