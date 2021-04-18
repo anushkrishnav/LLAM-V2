@@ -199,7 +199,7 @@ const Tracking = () => {
   useEffect(async () => {
     const locationData = await fetchData()
     // const prediction = await predictedData
-    // init(locationData);
+    init(locationData);
   }, [])
 
   const prevLat = usePrevious(latitude);
@@ -251,8 +251,8 @@ const Tracking = () => {
 
   return (
     <>
-      {/* <div id="cesium" /> */}
-      {/* <div id="toolbar" /> */}
+      <div id="cesium" />
+      <div id="toolbar" />
       <div className={classes.MetricsContainer}>
         <div className={classes.Content}>
           <h1>Predict Probability of Locust Attack</h1>
